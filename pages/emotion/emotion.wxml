@@ -1,0 +1,61 @@
+<view class="container">
+  <view class="header">
+    <text class="title">记录今日情绪</text>
+  </view>
+  <view class="content">
+    <view class="section">
+      <text class="section-title">选择情绪</text>
+      <view class="emotion-buttons">
+        <button class="emotion-btn" bindtap="selectEmotion" data-emotion="happy">
+          <image src="/assets/images/happy.png" class="emotion-icon"></image>
+          <text>开心</text>
+        </button>
+        <button class="emotion-btn" bindtap="selectEmotion" data-emotion="sad">
+          <image src="/assets/images/sad.png" class="emotion-icon"></image>
+          <text>难过</text>
+        </button>
+        <button class="emotion-btn" bindtap="selectEmotion" data-emotion="angry">
+          <image src="/assets/images/angry.png" class="emotion-icon"></image>
+          <text>愤怒</text>
+        </button>
+        <button class="emotion-btn" bindtap="selectEmotion" data-emotion="anxious">
+          <image src="/assets/images/anxious.png" class="emotion-icon"></image>
+          <text>焦虑</text>
+        </button>
+        <button class="emotion-btn" bindtap="selectEmotion" data-emotion="calm">
+          <image src="/assets/images/calm.png" class="emotion-icon"></image>
+          <text>平静</text>
+        </button>
+        <button class="emotion-btn" bindtap="selectEmotion" data-emotion="excited">
+          <image src="/assets/images/excited.png" class="emotion-icon"></image>
+          <text>兴奋</text>
+        </button>
+      </view>
+    </view>
+    
+    <view class="section">
+      <text class="section-title">想诉说的话</text>
+      <textarea class="textarea" placeholder="在这里写下你的心情..." bindinput="bindTextAreaChange"></textarea>
+    </view>
+    
+    <view class="section">
+      <text class="section-title">设置密码（可选）</text>
+      <input class="input" placeholder="输入4位数字密码" type="number" maxlength="4" bindinput="bindPasswordChange"></input>
+      <text class="hint">设置密码后，查看此条记录需要输入密码</text>
+    </view>
+    
+    <button class="submit-btn" bindtap="submitEmotion">保存记录</button>
+  </view>
+  
+  <!-- 密码输入弹窗 -->
+  <view class="modal" wx:if="{{showPasswordModal}}">
+    <view class="modal-content">
+      <text class="modal-title">请输入密码</text>
+      <input class="modal-input" placeholder="输入4位数字密码" type="number" maxlength="4" bindinput="bindModalPasswordChange"></input>
+      <view class="modal-buttons">
+        <button class="modal-btn cancel" bindtap="cancelPassword">取消</button>
+        <button class="modal-btn confirm" bindtap="confirmPassword">确认</button>
+      </view>
+    </view>
+  </view>
+</view>
