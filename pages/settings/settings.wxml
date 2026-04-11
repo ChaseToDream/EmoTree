@@ -1,0 +1,54 @@
+<view class="container">
+  <view class="header">
+    <text class="title">设置</text>
+  </view>
+  <view class="content">
+    <view class="section">
+      <text class="section-title">基础设置</text>
+      <view class="setting-list">
+        <view class="setting-item">
+          <text class="setting-label">深色模式</text>
+          <switch bindchange="toggleDarkMode"></switch>
+        </view>
+        <view class="setting-item">
+          <text class="setting-label">推送通知</text>
+          <switch bindchange="toggleNotification"></switch>
+        </view>
+        <view class="setting-item">
+          <text class="setting-label">自动保存</text>
+          <switch bindchange="toggleAutoSave"></switch>
+        </view>
+      </view>
+    </view>
+    
+    <view class="section">
+      <text class="section-title">数据管理</text>
+      <view class="setting-list">
+        <view class="setting-item" bindtap="exportData">
+          <text class="setting-label">导出数据</text>
+          <image src="/assets/images/arrow-right.png" class="arrow-icon"></image>
+        </view>
+        <view class="setting-item" bindtap="importData">
+          <text class="setting-label">导入数据</text>
+          <image src="/assets/images/arrow-right.png" class="arrow-icon"></image>
+        </view>
+        <view class="setting-item" bindtap="clearData">
+          <text class="setting-label">清空数据</text>
+          <image src="/assets/images/arrow-right.png" class="arrow-icon"></image>
+        </view>
+      </view>
+    </view>
+    
+    <view class="section">
+      <text class="section-title">关于</text>
+      <view class="about-content">
+        <image src="/assets/images/logo.png" class="about-logo"></image>
+        <text class="about-name">情绪树洞</text>
+        <text class="about-english">EmoTree</text>
+        <text class="about-version">版本 1.0.0</text>
+        <text class="about-description">记录你的情绪，倾听内心的声音</text>
+        <text class="about-copyright">© 2026 情绪树洞 | EmoTree</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,55 @@
+<view class="container">
+  <view class="header">
+    <text class="title">白噪音</text>
+  </view>
+  <view class="content">
+    <view class="player">
+      <image src="{{currentAudio ? '/assets/images/player.png' : '/assets/images/player-placeholder.png'}}" class="player-image"></image>
+      <view class="player-info">
+        <text class="player-title">{{currentAudio ? currentAudio.name : '选择音频'}}</text>
+        <text class="player-duration">{{formatTime(currentTime)}} / {{formatTime(duration)}}</text>
+      </view>
+      <view class="player-controls">
+        <button class="control-btn" bindtap="playPause">
+          <image src="{{isPlaying ? '/assets/images/pause.png' : '/assets/images/play.png'}}" class="control-icon"></image>
+        </button>
+        <button class="control-btn" bindtap="stop">
+          <image src="/assets/images/stop.png" class="control-icon"></image>
+        </button>
+      </view>
+    </view>
+    
+    <view class="progress-bar">
+      <slider bindchange="sliderChange" value="{{sliderValue}}" class="slider" min="0" max="100" step="1"></slider>
+    </view>
+    
+    <view class="section">
+      <text class="section-title">内置音频</text>
+      <view class="audio-list">
+        <view class="audio-item" wx:for="{{builtInAudios}}" wx:key="{{item.id}}" bindtap="selectAudio" data-audio="{{item}}">
+          <image src="/assets/images/audio.png" class="audio-icon"></image>
+          <text class="audio-name">{{item.name}}</text>
+          <image src="{{currentAudio && currentAudio.id === item.id ? '/assets/images/playing.png' : '/assets/images/play-small.png'}}" class="play-icon"></image>
+        </view>
+      </view>
+    </view>
+    
+    <view class="section">
+      <text class="section-title">我的音频</text>
+      <view class="audio-list">
+        <view class="audio-item" wx:for="{{userAudios}}" wx:key="{{item.id}}" bindtap="selectAudio" data-audio="{{item}}">
+          <image src="/assets/images/audio.png" class="audio-icon"></image>
+          <text class="audio-name">{{item.name}}</text>
+          <image src="{{currentAudio && currentAudio.id === item.id ? '/assets/images/playing.png' : '/assets/images/play-small.png'}}" class="play-icon"></image>
+        </view>
+        <view class="audio-item upload" bindtap="uploadAudio">
+          <image src="/assets/images/upload.png" class="audio-icon"></image>
+          <text class="audio-name">上传音频</text>
+        </view>
+        <view class="empty-audio" wx:if="{{userAudios.length === 0}}">
+          <text>暂无上传音频</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

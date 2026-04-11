@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/emotion/emotion",
+    "pages/statistics/statistics",
+    "pages/whiteNoise/whiteNoise",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "情绪树洞",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/images/home.png",
+        "selectedIconPath": "assets/images/home-active.png"
+      },
+      {
+        "pagePath": "pages/emotion/emotion",
+        "text": "每日情绪",
+        "iconPath": "assets/images/emotion.png",
+        "selectedIconPath": "assets/images/emotion-active.png"
+      },
+      {
+        "pagePath": "pages/statistics/statistics",
+        "text": "数据统计",
+        "iconPath": "assets/images/statistics.png",
+        "selectedIconPath": "assets/images/statistics-active.png"
+      },
+      {
+        "pagePath": "pages/whiteNoise/whiteNoise",
+        "text": "白噪音",
+        "iconPath": "assets/images/noise.png",
+        "selectedIconPath": "assets/images/noise-active.png"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "设置",
+        "iconPath": "assets/images/settings.png",
+        "selectedIconPath": "assets/images/settings-active.png"
+      }
+    ],
+    "color": "#666",
+    "selectedColor": "#4CAF50",
+    "backgroundColor": "#fff",
+    "borderStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

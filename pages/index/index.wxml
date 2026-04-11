@@ -1,0 +1,31 @@
+<view class="container">
+  <view class="header">
+    <image src="/assets/images/logo.png" class="logo"></image>
+    <text class="title">情绪树洞</text>
+    <text class="subtitle">EmoTree</text>
+  </view>
+  <view class="content">
+    <text class="description">记录你的情绪，倾听内心的声音</text>
+    <view class="features">
+      <view class="feature-item">
+        <image src="/assets/images/emotion.png" class="feature-icon"></image>
+        <text class="feature-text">每日情绪记录</text>
+      </view>
+      <view class="feature-item">
+        <image src="/assets/images/statistics.png" class="feature-icon"></image>
+        <text class="feature-text">数据统计分析</text>
+      </view>
+      <view class="feature-item">
+        <image src="/assets/images/noise.png" class="feature-icon"></image>
+        <text class="feature-text">白噪音放松</text>
+      </view>
+      <view class="feature-item">
+        <image src="/assets/images/settings.png" class="feature-icon"></image>
+        <text class="feature-text">个性化设置</text>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <text class="footer-text">© 2026 情绪树洞 | EmoTree</text>
+  </view>
+</view>

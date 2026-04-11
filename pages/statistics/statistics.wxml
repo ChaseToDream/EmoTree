@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="header">
+    <text class="title">数据统计</text>
+  </view>
+  <view class="content">
+    <view class="stats-card">
+      <text class="stats-title">情绪总数</text>
+      <text class="stats-number">{{totalRecords}}</text>
+    </view>
+    
+    <view class="section">
+      <text class="section-title">情绪分布</text>
+      <view class="chart-container">
+        <canvas canvas-id="emotionChart" class="chart"></canvas>
+      </view>
+    </view>
+    
+    <view class="section">
+      <text class="section-title">最近记录</text>
+      <view class="record-list">
+        <view class="record-item" wx:for="{{recentRecords}}" wx:key="{{item.id}}">
+          <view class="record-date">{{formatDate(item.date)}}</view>
+          <view class="record-emotion">{{getEmotionText(item.emotion)}}</view>
+          <view class="record-content">{{item.content.substring(0, 20)}}{{item.content.length > 20 ? '...' : ''}}</view>
+          <view class="record-lock" wx:if="{{item.locked}}">
+            <image src="/assets/images/lock.png" class="lock-icon"></image>
+            <text class="lock-text">已锁定</text>
+          </view>
+        </view>
+        <view class="empty-record" wx:if="{{recentRecords.length === 0}}">
+          <text>暂无记录</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
